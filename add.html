@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>add cart</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <section>
+        <div class="container">
+            <div class="row">
+                <table class="table">
+                    <thead class="table-dark align-center">
+                        <tr align="center">
+                            <th>Sr.No</th>
+                            <th>Name</th>
+                            <th>Image</th>
+                            <th>Qty</th>
+                            <th>Price</th>
+                            <th>total</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="product" align="center"></tbody>
+                  </table>
+                  <!-- <h4 id="finaltotal"></h4> -->
+            </div>
+        </div>
+    </section>
+
+</body>
+
+<script type="text/javascript">
+  const viewproduct = () =>{
+    let allcart=JSON.parse(localStorage.getItem('cart')) ? JSON.parse(localStorage.getItem('cart'))  : []
+    let tbl="";
+    let sum=0;
+    allcart.map((val)=>{
+        sum=sum+val.price*val.qty;
+        return (
+            tbl += `
+                <tr>
+                        <td style="width:20%">${val.id}</td>
+                        <td style="width:20%">${val.name}</td>
+                        <td style="width:20%"><img src="${val.image}" class="w-50"/></td>
+                        <td style="width:20%">
+                            <input style="width:70px" id="qty_${val.id}" onchange="editcart(${val.id})" type="number" ${val.qty} class="form-control" value="${val.qty}">
+                            </td>
+                            <td style="width:20%">${val.price}</td>
+                            <td>${val.price * val.qty}</td>
+                            <td>
+                               <button onclick="deleteuser(${val.id})">Delete</button>
+                                </td>
+                    </tr>
+            `
+
+            
+
+        )
+      
+    })
+
+    tbl += `
+        <tr>
+            <td colspan="5">final total</td>
+            <td id="finaltotal" style="font-size:20px;color:green;"></td>
+            </tr>
+    `
+    document.getElementById('product').innerHTML=tbl;
+    document.getElementById('finaltotal').innerHTML=` ${sum}`;
+  }
+  viewproduct();
+
+  const deleteuser =(id) =>{
+    let allcart=JSON.parse(localStorage.getItem('cart'));
+    let deleterecord=allcart.filter((val)=> val.id != id);
+    localStorage.setItem('cart',JSON.stringify(deleterecord));
+    alert('delete sucessfully...');
+    viewproduct();
+  }
+
+  const editcart = id => {
+  let editid = document.getElementById(`qty_${id}`).value;
+  let cartdata = JSON.parse(localStorage.getItem("cart"));
+  cartdata.map(item => {
+    if (item.id == id) {
+      item.qty = editid;
+    }
+  });
+  localStorage.setItem("cart", JSON.stringify(cartdata));
+  console.log(cartdata);
+  viewproduct();
+};
+viewproduct();
+</script>
+</html>
