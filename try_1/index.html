@@ -42,14 +42,14 @@
         },
         {
             id:"2",
-            name:"paper Roast",
+            name:"Paper Roast",
             price:65,
             qty:1,
             image:"https://www.tutorjoes.in/public/js_program/12_cart/images/98.jpg"
         },
         {
             id:"3",
-            name:"onion Roast",
+            name:"Onion Roast",
             price:80,
             qty:1,
             image:"https://www.tutorjoes.in/public/js_program/12_cart/images/99.jpg"
@@ -63,7 +63,7 @@
         },
         {
             id:"5",
-            name:"plain omlette",
+            name:"Plain omlette",
             price:25,
             qty:1,
             image:"https://www.tutorjoes.in/public/js_program/12_cart/images/101.jpg"
@@ -97,12 +97,12 @@
             return (
                 tbl += `
                     <div class="col-md-3">
-                        <div class="card" style="width: 11rem;margin:10px;">
+                        <div class="card" style="width: 18rem;margin:10px;">
   <img src="${val.image}" class="card-img-top" alt="...">
   <div class="card-body">
-    <h5 class="card-title">${val.name}</h5>
-    <p class="card-text">${val.price}</p>
-    <a onclick="addcart(${val.id})" class="btn w-100" style="background:black;color:white;"><i class="fa-solid fa-cart-shopping"></i></a>
+    <h5 class="card-title" style="font-size:25px;">${val.name}</h5>
+    <p class="card-text" style="font-size:25px;">${val.price}</p>
+    <a onclick="addcart(${val.id})" class="btn w-100" style="background:black;color:white;font-size:25px;"><i class="fa-solid fa-cart-shopping"></i></a>
   </div>
 </div>
                         </div>

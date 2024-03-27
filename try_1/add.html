@@ -10,8 +10,8 @@
     <section>
         <div class="container">
             <div class="row">
-                <table class="table">
-                    <thead class="table-dark align-center">
+                <table class="table" style="font-size: 25px;">
+                    <thead class="table-dark">
                         <tr align="center">
                             <th>Sr.No</th>
                             <th>Name</th>
@@ -22,9 +22,8 @@
                             <th>Action</th>
                         </tr>
                     </thead>
-                    <tbody id="product" align="center"></tbody>
+                    <tbody id="product" align="center" class="align-center"></tbody>
                   </table>
-                  <!-- <h4 id="finaltotal"></h4> -->
             </div>
         </div>
     </section>
@@ -41,15 +40,15 @@
         return (
             tbl += `
                 <tr>
-                        <td style="width:20%">${val.id}</td>
-                        <td style="width:20%">${val.name}</td>
-                        <td style="width:20%"><img src="${val.image}" class="w-50"/></td>
-                        <td style="width:20%">
-                            <input style="width:70px" id="qty_${val.id}" onchange="editcart(${val.id})" type="number" ${val.qty} class="form-control" value="${val.qty}">
+                        <td style="width:15%">${val.id}</td>
+                        <td style="width:15%">${val.name}</td>
+                        <td style="width:15%"><img src="${val.image}" class="w-50"/></td>
+                        <td style="width:15%">
+                            <input  style="width:90px;text-align:center;font-size:25px;" id="qty_${val.id}" onchange="editcart(${val.id})" type="number" ${val.qty} class="form-control" value="${val.qty}">
                             </td>
-                            <td style="width:20%">${val.price}</td>
+                            <td style="width:15%">${val.price}</td>
                             <td>${val.price * val.qty}</td>
-                            <td>
+                            <td width="15%">
                                <button onclick="deleteuser(${val.id})">Delete</button>
                                 </td>
                     </tr>
@@ -63,8 +62,8 @@
 
     tbl += `
         <tr>
-            <td colspan="5">final total</td>
-            <td id="finaltotal" style="font-size:20px;color:green;"></td>
+            <td colspan="5">Final total :-</td>
+            <td id="finaltotal" style="font-size:40px;color:green;"></td>
             </tr>
     `
     document.getElementById('product').innerHTML=tbl;

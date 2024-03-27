@@ -11,12 +11,13 @@ header{
     width: 100%;
     margin: 0 auto;
     justify-content: space-around;
-    height: 30px;
+    height: 50px;
     align-items: center;
 }
 .nav a{
     color:white;
     text-decoration: none;
+    font-size: 25px;
 }
 body{
     background-color: #4b4b4b!important;
@@ -25,6 +26,6 @@ body{
 .food h6{
     color: white;
     margin-top: 10px;
-    font-size: 14px;
+    font-size: 25px;
 
 }
