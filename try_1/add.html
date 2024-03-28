@@ -24,6 +24,9 @@
                     </thead>
                     <tbody id="product" align="center" class="align-center"></tbody>
                   </table>
+                    <div class="d-flex justify-content-end">
+                      <a href="index.html" class="justify-content-end" style="text-decoration: none;color:white;font-size: 20px;background-color: black;display:inline-block;width: 10%;border-radius: 10px;text-align: center;padding: 10px;margin-top: 10px;">back page</a>
+                    </div>
             </div>
         </div>
     </section>
@@ -82,6 +85,9 @@
   const editcart = id => {
   let editid = document.getElementById(`qty_${id}`).value;
   let cartdata = JSON.parse(localStorage.getItem("cart"));
+
+
+if(editid > 0){
   cartdata.map(item => {
     if (item.id == id) {
       item.qty = editid;
@@ -89,6 +95,11 @@
   });
   localStorage.setItem("cart", JSON.stringify(cartdata));
   console.log(cartdata);
+}else{
+  alert("Minimum 1 record")
+  document.getElementById(`qty_${id}`).value = 1;
+  return false;
+}
   viewproduct();
 };
 viewproduct();
