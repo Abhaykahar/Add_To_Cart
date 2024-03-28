@@ -25,7 +25,7 @@
                     <tbody id="product" align="center" class="align-center"></tbody>
                   </table>
                     <div class="d-flex justify-content-end">
-                      <a href="index.html" class="justify-content-end" style="text-decoration: none;color:white;font-size: 20px;background-color: black;display:inline-block;width: 10%;border-radius: 10px;text-align: center;padding: 10px;margin-top: 10px;">Back page</a>
+                      <a href="index.html" class="justify-content-end mb-5" style="text-decoration: none;color:white;font-size: 20px;background-color: black;display:inline-block;width: 10%;border-radius: 10px;text-align: center;padding: 10px;margin-top: 10px;">Back page</a>
                     </div>
             </div>
         </div>
@@ -52,25 +52,22 @@
                             <td style="width:15%">${val.price}</td>
                             <td>${val.price * val.qty}</td>
                             <td width="15%">
-                               <button onclick="deleteuser(${val.id})">Delete</button>
+                               <button onclick="deleteuser(${val.id})" style="border:none;background-color:#FFFFFF;"><i class="fa-solid fa-trash" style="color:red;border-none;background-color:transparent;"></i></button>
                                 </td>
                     </tr>
             `
-
-            
-
         )
       
     })
 
     tbl += `
         <tr>
-            <td colspan="5">Final total :-</td>
-            <td id="finaltotal" style="font-size:40px;color:green;"></td>
+            <td colspan="4"></td>
+            <td  colspan="7" id="finaltotal" style="font-size:40px;color:green;"></td>
             </tr>
     `
     document.getElementById('product').innerHTML=tbl;
-    document.getElementById('finaltotal').innerHTML=` ${sum}`;
+    document.getElementById('finaltotal').innerHTML=`Bill Pay amount :- ${sum}`;
   }
   viewproduct();
 
@@ -96,7 +93,7 @@ if(editid > 0){
   localStorage.setItem("cart", JSON.stringify(cartdata));
   console.log(cartdata);
 }else{
-  alert("Minimum 1 record")
+  alert("Minimum 1 order require...");
   document.getElementById(`qty_${id}`).value = 1;
   return false;
 }

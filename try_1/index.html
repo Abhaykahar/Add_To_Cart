@@ -97,12 +97,14 @@
             return (
                 tbl += `
                     <div class="col-md-3">
-                        <div class="card" style="width: 18rem;margin:10px;">
-  <img src="${val.image}" class="card-img-top" alt="...">
+                        <div class="card" style="width: 19rem;margin:10px;">
+  <img src="${val.image}" class="card-img-top" alt="..." style="padding:10px;">
   <div class="card-body">
-    <h5 class="card-title" style="font-size:25px;">${val.name}</h5>
-    <p class="card-text" style="font-size:25px;">${val.price}</p>
-    <a onclick="addcart(${val.id})" class="btn w-100" style="background:black;color:white;font-size:25px;"><i class="fa-solid fa-cart-shopping"></i></a>
+    <h5 class="card-title" style="font-size:30px;">${val.name}</h5>
+    <p class="card-text" style="font-size:30px;">${val.price}</p>
+    <div class="d-flex justify-content-end">
+    <a onclick="addcart(${val.id})" class="btn w-25" style="background:green;color:white;font-size:25px;margin-left:10px;"><i class="fa-solid fa-cart-shopping"></i></a>
+</div>
   </div>
 </div>
                         </div>
