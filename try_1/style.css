@@ -35,10 +35,17 @@ body{
 }
 .card {
     overflow: hidden;
+    transition: all 0.5s;
+}
+.card:hover{
+    transform: scale(1.1);
 }
 .card img{
     transition: all 0.5s!important;
 
+}
+body{
+    overflow-x: hidden!important;
 }
 
 .card img:hover{
@@ -58,6 +65,7 @@ table tr td{
 table tr td{
     font-size: 25px;
 }
+
 
 table thead tr th{
     background-color:gray!important;
