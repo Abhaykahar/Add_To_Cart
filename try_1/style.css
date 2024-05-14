@@ -26,6 +26,28 @@ body{
 .food h6{
     color: white;
     margin-top: 10px;
+    margin-bottom: 10px;
     font-size: 25px;
 
 }
+.card {
+    overflow: hidden;
+}
+
+.card img:hover{
+    transform: scale(1.1);
+    transition: all 0.5s;
+    overflow: hidden;
+}
+.card .card-body{
+    overflow: hidden;
+}
+table {
+    font-size: 25px;
+
+}
+
+table tr td{
+    font-size: 25px;
+}
+

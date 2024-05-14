@@ -24,7 +24,7 @@
     </section>
 
     <section>
-        <div class="container">
+        <div class="container"> 
             <div class="row" id="product"></div>
         </div>
     </section>
@@ -96,12 +96,12 @@
         product.map((val)=>{
             return (
                 tbl += `
-                    <div class="col-md-3">
-                        <div class="card" style="width: 19rem;margin:10px;">
+                    <div class="col-sm-12 col-lg-6 col-xl-3 d-flex justify-content-center">
+                        <div class="card" style="width: 19rem;margin-top:10px;margin-bottom:10px;">
   <img src="${val.image}" class="card-img-top" alt="..." style="padding:10px;">
   <div class="card-body">
     <h5 class="card-title" style="font-size:30px;">${val.name}</h5>
-    <p class="card-text" style="font-size:30px;">${val.price}</p>
+    <p class="card-text" style="font-size:25px;">Price :- ${val.price}</p>
     <div class="d-flex justify-content-end">
     <a onclick="addcart(${val.id})" class="btn w-25" style="background:green;color:white;font-size:25px;margin-left:10px;"><i class="fa-solid fa-cart-shopping"></i></a>
 </div>
