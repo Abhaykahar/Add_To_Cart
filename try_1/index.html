@@ -10,7 +10,7 @@
 
     <header>
         <div class="nav">
-            <a href="#"> <i class="fa-solid fa-cubes-stacked"></i> FOOD DELIGHT</a>
+            <a href="#" style="margin-left: 60px;"><i class="fa-solid fa-cubes-stacked"></i> FOOD DELIGHT</a>
             <a href="add.html"> <i class="fa-solid fa-cart-shopping"></i> </a>
         </div>
     </header>
@@ -18,7 +18,7 @@
     <section class="food">
         <div class="container">
             <div class="row">
-                <h6>Discover the Best Food</h6>
+                <h2>Discover the Best Food</h2>
             </div>
         </div>
     </section>
@@ -100,10 +100,10 @@
                         <div class="card" style="width: 19rem;margin-top:10px;margin-bottom:10px;">
   <img src="${val.image}" class="card-img-top" alt="..." style="padding:10px;">
   <div class="card-body">
-    <h5 class="card-title" style="font-size:30px;">${val.name}</h5>
-    <p class="card-text" style="font-size:25px;">Price :- ${val.price}</p>
+    <h5 class="card-title" style="font-size:25px;">Name :- ${val.name}</h5>
+    <p class="card-text" style="font-size:22px;">Price :- ${val.price}</p>
     <div class="d-flex justify-content-end">
-    <a onclick="addcart(${val.id})" class="btn w-25" style="background:green;color:white;font-size:25px;margin-left:10px;"><i class="fa-solid fa-cart-shopping"></i></a>
+    <a onclick="addcart(${val.id})" class="btn w-100" style="background:gray;color:white;font-size:21px">Add to cart</a>
 </div>
   </div>
 </div>

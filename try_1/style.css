@@ -4,14 +4,18 @@
     box-sizing: border-box;
 }
 header{
-    background-color: #ff4757;
+    background-color: gray;
     width: 100%;
 }
 .nav{
     width: 100%;
-    margin: 0 auto;
-    justify-content: space-around;
+    padding: 0 80px;
+    justify-content: space-between;
     height: 50px;
+    align-items: center;
+    display: flex;
+    margin: 0 20px;
+    
     align-items: center;
 }
 .nav a{
@@ -23,15 +27,18 @@ body{
     background-color: #4b4b4b!important;
 }
 
-.food h6{
+.food h2{
     color: white;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    font-size: 25px;
+    margin-top: 15px;
+    margin-bottom: 15px;
 
 }
 .card {
     overflow: hidden;
+}
+.card img{
+    transition: all 0.5s!important;
+
 }
 
 .card img:hover{
@@ -42,12 +49,18 @@ body{
 .card .card-body{
     overflow: hidden;
 }
-table {
+table tr td{
     font-size: 25px;
-
+    background-color: transparent!important;
+    color: white!important;
 }
 
 table tr td{
     font-size: 25px;
+}
+
+table thead tr th{
+    background-color:gray!important;
+    color: white!important;
 }
 
